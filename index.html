@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Création de site vitrine pour artisans | Web Artisant – dès 300€</title>
+    <meta
+      name="description"
+      content="Création de sites vitrines professionnels pour artisans et négoces. Spécialisé dans les métiers manuels, nous concevons des sites augmentant le nombre de prospects dès 300€."
+    />
+    <link rel="icon" type="image/png" href="images/LOGOS/logo%20transparent.png" />
+    
+    <!-- SEO & Référencement -->
+    <link rel="canonical" href="https://votredomaine.fr/" />
+    <meta name="robots" content="index,follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Sites vitrines pour artisans – dès 300€" />
+    <meta property="og:description" content="Sites vitrines professionnels pour artisans et négoces. Conçu pour générer des demandes de devis." />
+    <meta property="og:image" content="https://votredomaine.fr/images/og-cover.jpg" />
+    <meta property="og:url" content="https://votredomaine.fr/" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sites vitrines pour artisans – dès 300€" />
+    <meta name="twitter:description" content="Sites vitrines professionnels pour artisans et négoces. Conçu pour générer des demandes de devis." />
+    <meta name="twitter:image" content="https://votredomaine.fr/images/og-cover.jpg" />
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Web Artisant",
+      "url": "https://votredomaine.fr",
+      "description": "Création de sites vitrines pour artisans et négoces.",
+      "areaServed": "FR",
+      "serviceType": "Création de sites web",
+      "priceRange": "300€ - 1000€"
+    }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Skip link pour navigation clavier -->
+    <a class="skip-link" href="#hero">Aller au contenu</a>
+    
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo-block">
+          <img
+            src="images/LOGOS/logo%20transparent.png"
+            alt="Web Artisant - création de sites vitrines pour artisans"
+            class="logo-image"
+          />
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" role="navigation" aria-label="Navigation principale" id="mainNav">
+          <a href="#hero" aria-current="page">Accueil</a>
+          <a href="#why">Pourquoi moi ?</a>
+          <a href="#process">Étapes</a>
+          <a href="#offers">Offres</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a href="#offers" class="btn-header-cta open-modal" data-modal-type="appel">Réserver un Appel</a>
+      </div>
+    </header>
+
+    <!-- SECTION 1 - HERO -->
+    <main>
+      <section id="hero" class="section hero">
+        <div class="container hero-grid">
+          <div class="hero-left">
+            <div class="hero-logo">
+              <img
+                src="images/LOGOS/logo%20transparent.png"
+                alt="Web Artisant - création de sites vitrines pour artisans"
+                class="hero-logo-image"
+              />
+            </div>
+            <h1 class="hero-main-title">
+              <span class="title-main">AUGMENTER VOS CLIENTS</span> <span class="title-continuation">grâce à</span>
+              <span class="hero-subtitle">des sites vitrines professionnels pour artisans et négoces</span> <span class="subtitle-red">à</span>
+              <span class="hero-price-start">partir de</span> <span class="price-amount">300&nbsp;€</span>
+            </h1>
+            <div class="hero-chips">
+              <span class="chip">Appels entrants</span>
+              <span class="chip">Devis qualifiés</span>
+              <span class="chip">SEO local</span>
+              <span class="chip">Clé en main</span>
+            </div>
+            <a href="#offers" class="btn-primary hero-cta open-modal" data-modal-type="appel">Je réserve un appel</a>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-card hero-card-large">
+              <img src="images/PORTFOLIO/portfolio-1.jpg" alt="Site web réalisé - Exemple 1" class="hero-card-image" loading="lazy" width="800" height="600" />
+              <div class="hero-card-overlay">
+                <span class="hero-card-label">Site réalisé</span>
+              </div>
+            </div>
+            <div class="hero-card hero-card-medium">
+              <img src="images/PORTFOLIO/portfolio-2.jpg" alt="Site web réalisé - Exemple 2" class="hero-card-image" loading="lazy" width="600" height="450" />
+              <div class="hero-card-overlay">
+                <span class="hero-card-label">Site réalisé</span>
+              </div>
+            </div>
+            <div class="hero-card hero-card-small">
+              <img src="images/PORTFOLIO/portfolio-3.jpg" alt="Site web réalisé - Exemple 3" class="hero-card-image" loading="lazy" width="500" height="375" />
+              <div class="hero-card-overlay">
+                <span class="hero-card-label">Site réalisé</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container hero-bottom-grid">
+          <div class="portfolio-carousel">
+            <div class="portfolio-carousel-track" id="portfolioCarousel">
+              <div class="portfolio-item">
+                <img src="images/PORTFOLIO/portfolio-1.jpg" alt="Preuve de travail - Site 1" class="portfolio-image" loading="lazy" width="286" height="235" />
+                <div class="portfolio-item-overlay">
+                  <span class="portfolio-item-label">Site réalisé</span>
+                </div>
+              </div>
+              <div class="portfolio-item">
+                <img src="images/PORTFOLIO/portfolio-2.jpg" alt="Preuve de travail - Site 2" class="portfolio-image" loading="lazy" width="286" height="235" />
+                <div class="portfolio-item-overlay">
+                  <span class="portfolio-item-label">Site réalisé</span>
+                </div>
+              </div>
+              <div class="portfolio-item">
+                <img src="images/PORTFOLIO/portfolio-3.jpg" alt="Preuve de travail - Site 3" class="portfolio-image" loading="lazy" width="286" height="235" />
+                <div class="portfolio-item-overlay">
+                  <span class="portfolio-item-label">Site réalisé</span>
+                </div>
+              </div>
+              <div class="portfolio-item">
+                <img src="images/PORTFOLIO/portfolio-4.jpg" alt="Preuve de travail - Site 4" class="portfolio-image" loading="lazy" width="286" height="235" />
+                <div class="portfolio-item-overlay">
+                  <span class="portfolio-item-label">Site réalisé</span>
+                </div>
+              </div>
+              <div class="portfolio-item">
+                <img src="images/PORTFOLIO/portfolio-5.jpg" alt="Preuve de travail - Site 5" class="portfolio-image" loading="lazy" width="286" height="235" />
+                <div class="portfolio-item-overlay">
+                  <span class="portfolio-item-label">Site réalisé</span>
+                </div>
+              </div>
+            </div>
+            <button class="hero-arrow hero-arrow-right" type="button" aria-label="Suivant" id="carouselNext">
+              →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2 - POURQUOI ME CHOISIR ? -->
+      <section id="why" class="section why">
+        <div class="container">
+          <!-- En-tête de section -->
+          <div class="why-header">
+            <p class="why-intro">Notre savoir-faire</p>
+            <h2 class="why-main-title">VOS CLIENTS VOUS TROUVENT PLUS FACILEMENT</h2>
+            <p class="why-subtitle">Un site web qui fonctionne, sans complications ni jargon technique.</p>
+          </div>
+
+          <!-- Grille principale : témoignage à gauche, cartes à droite -->
+          <div class="why-content-grid">
+            <!-- Bloc témoignage (gauche) -->
+            <div class="why-testimonial">
+              <div class="testimonial-card">
+                <div class="testimonial-quote">
+                  <svg class="quote-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 20C10 15 12 10 18 10C20 10 22 11 22 13C22 15 20 16 18 16C16 16 14 17 14 19C14 21 16 22 18 22C24 22 26 17 26 12V10H30V20C30 25 26 30 20 30C14 30 10 25 10 20Z" fill="currentColor" opacity="0.2"/>
+                    <path d="M10 20C10 15 12 10 18 10C20 10 22 11 22 13C22 15 20 16 18 16C16 16 14 17 14 19C14 21 16 22 18 22C24 22 26 17 26 12V10H30V20C30 25 26 30 20 30C14 30 10 25 10 20Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <blockquote class="testimonial-text">
+                  "Avant, j'avais du mal à expliquer mon travail aux clients. Maintenant, mon site montre directement mes réalisations. J'ai reçu 3 demandes de devis la première semaine."
+                </blockquote>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar">
+                    <img src="images/Arthur/Arthur.jpg" alt="Photo client" class="avatar-image" loading="lazy" width="56" height="56" />
+                  </div>
+                  <div class="testimonial-info">
+                    <p class="testimonial-name">Marc Dubois</p>
+                    <p class="testimonial-role">Plombier, Lyon</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bloc cartes bénéfices (droite) -->
+            <div class="why-benefits">
+              <div class="benefit-card" data-benefit="1">
+                <div class="benefit-icon">
+                  <img src="images/ICONS/icones Pourquoi me choisir/4.png" alt="Plus de clients" class="benefit-icon-image" />
+                </div>
+                <h3 class="benefit-title">Plus de clients</h3>
+                <p class="benefit-text">Votre site apparaît dans les recherches Google locales. Les clients vous trouvent quand ils cherchent votre métier près de chez eux.</p>
+              </div>
+              <div class="benefit-card" data-benefit="2">
+                <div class="benefit-icon">
+                  <img src="images/ICONS/icones Pourquoi me choisir/2.png" alt="Moins de temps perdu" class="benefit-icon-image" />
+                </div>
+                <h3 class="benefit-title">Moins de temps perdu</h3>
+                <p class="benefit-text">Fini les explications au téléphone. Vos réalisations et tarifs sont en ligne. Les clients arrivent déjà informés.</p>
+              </div>
+              <div class="benefit-card" data-benefit="3">
+                <div class="benefit-icon">
+                  <img src="images/ICONS/icones Pourquoi me choisir/1.png" alt="Plus de crédibilité" class="benefit-icon-image" />
+                </div>
+                <h3 class="benefit-title">Plus de crédibilité</h3>
+                <p class="benefit-text">Un site professionnel rassure. Vos clients voient que vous êtes sérieux avant même de vous appeler.</p>
+              </div>
+              <div class="benefit-card" data-benefit="4">
+                <div class="benefit-icon">
+                  <img src="images/ICONS/icones Pourquoi me choisir/3.png" alt="Plus de rentabilité" class="benefit-icon-image" />
+                </div>
+                <h3 class="benefit-title">Plus de rentabilité</h3>
+                <p class="benefit-text">Un site qui fonctionne, c'est des devis qui arrivent même quand vous êtes sur un chantier.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3 - VOTRE SITE EN 5 ÉTAPES -->
+      <section id="process" class="section process">
+        <div class="container">
+          <h2 class="section-title">Votre site en 5 étapes</h2>
+          
+          <!-- Indicateur de progression -->
+          <div class="process-progress">
+            <div class="process-progress-line" id="processProgressLine"></div>
+            <div class="process-progress-dots">
+              <span class="progress-dot" data-step="1"></span>
+              <span class="progress-dot" data-step="2"></span>
+              <span class="progress-dot" data-step="3"></span>
+              <span class="progress-dot" data-step="4"></span>
+              <span class="progress-dot" data-step="5"></span>
+            </div>
+          </div>
+
+          <!-- Conteneur des étapes avec dévoilement séquentiel -->
+          <div class="process-steps-container">
+            <!-- Étape 1 -->
+            <article class="process-card" data-step="1">
+              <div class="process-card-inner">
+                <div class="process-card-content">
+                  <div class="process-card-number">1</div>
+                  <h3 class="process-card-title">Cadrage du projet</h3>
+                  <p class="process-card-text">
+                    Nous définissons ensemble l'objectif de votre site, vos
+                    contraintes et vos priorités business pour bâtir une stratégie
+                    adaptée à votre métier d'artisan.
+                  </p>
+                </div>
+                <div class="process-card-image-wrapper">
+                  <img src="images/ICONS/1.png" alt="Cadrage du projet" class="process-card-image" />
+                </div>
+              </div>
+            </article>
+
+            <!-- Étape 2 -->
+            <article class="process-card" data-step="2">
+              <div class="process-card-inner">
+                <div class="process-card-content">
+                  <div class="process-card-number">2</div>
+                  <h3 class="process-card-title">Stratégie de contenu et UX</h3>
+                  <p class="process-card-text">
+                    Construction de l'arborescence, choix des sections clés
+                    (présentation, services, réalisations, avis clients, contact)
+                    et optimisation du contenu pour convertir vos visiteurs en
+                    demandes de devis.
+                  </p>
+                </div>
+                <div class="process-card-image-wrapper">
+                  <img src="images/ICONS/2.png" alt="Stratégie de contenu et UX" class="process-card-image" />
+                </div>
+              </div>
+            </article>
+
+            <!-- Étape 3 -->
+            <article class="process-card" data-step="3">
+              <div class="process-card-inner">
+                <div class="process-card-content">
+                  <div class="process-card-number">3</div>
+                  <h3 class="process-card-title">Conception UI</h3>
+                  <p class="process-card-text">
+                    Création d'une interface simple, claire et rassurante, aux
+                    couleurs de votre entreprise, pensée pour être lisible sur
+                    mobile comme sur ordinateur.
+                  </p>
+                </div>
+                <div class="process-card-image-wrapper">
+                  <img src="images/ICONS/3.png" alt="Conception UI" class="process-card-image" />
+                </div>
+              </div>
+            </article>
+
+            <!-- Étape 4 -->
+            <article class="process-card" data-step="4">
+              <div class="process-card-inner">
+                <div class="process-card-content">
+                  <div class="process-card-number">4</div>
+                  <h3 class="process-card-title">Intégration</h3>
+                  <p class="process-card-text">
+                    Intégration du site, mise en ligne, configuration des formulaires
+                    de contact et des outils essentiels (statistiques, base SEO…).
+                  </p>
+                </div>
+                <div class="process-card-image-wrapper">
+                  <img src="images/ICONS/5.png" alt="Intégration" class="process-card-image" />
+                </div>
+              </div>
+            </article>
+
+            <!-- Étape 5 -->
+            <article class="process-card" data-step="5">
+              <div class="process-card-inner">
+                <div class="process-card-content">
+                  <div class="process-card-number">5</div>
+                  <h3 class="process-card-title">Livraison</h3>
+                  <p class="process-card-text">
+                    Vous repartez avec un site prêt à l'emploi et une courte vidéo
+                    pour le prendre en main. Formation et accompagnement inclus.
+                  </p>
+                </div>
+                <div class="process-card-image-wrapper">
+                  <img src="images/ICONS/4.png" alt="Livraison" class="process-card-image" />
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Indicateur de scroll discret (visible uniquement si pas toutes les cartes révélées) -->
+          <div class="process-scroll-hint" id="processScrollHint">
+            <span>Scroll pour découvrir la suite</span>
+            <span class="scroll-arrow">↓</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4 - OFFRES -->
+      <section id="offers" class="section offers">
+        <div class="container">
+          <h2 class="section-title">Nos offres</h2>
+          
+          <!-- Bloc de preuves -->
+          <div class="proofs-section">
+            <div class="proofs-grid">
+              <div class="proof-item">
+                <div class="proof-icon">✓</div>
+                <div class="proof-content">
+                  <h3 class="proof-title">+50% de demandes</h3>
+                  <p class="proof-text">En moyenne après mise en ligne</p>
+                </div>
+              </div>
+              <div class="proof-item">
+                <div class="proof-icon">⚡</div>
+                <div class="proof-content">
+                  <h3 class="proof-title">10-15 jours</h3>
+                  <p class="proof-text">Délai de livraison garanti</p>
+                </div>
+              </div>
+              <div class="proof-item">
+                <div class="proof-icon">🎯</div>
+                <div class="proof-content">
+                  <h3 class="proof-title">SEO local inclus</h3>
+                  <p class="proof-text">Google Business Profile optimisé</p>
+                </div>
+              </div>
+            </div>
+            <div class="proofs-sectors">
+              <p class="proofs-sectors-label">Secteurs accompagnés :</p>
+              <div class="sectors-tags">
+                <span class="sector-tag">Plombier</span>
+                <span class="sector-tag">Menuisier</span>
+                <span class="sector-tag">Électricien</span>
+                <span class="sector-tag">Maçon</span>
+                <span class="sector-tag">Peintre</span>
+                <span class="sector-tag">Et plus...</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="offers-grid">
+            <article class="offer-card">
+              <div class="offer-badge">1</div>
+              <h3 class="offer-title">Offre de départ</h3>
+              <p class="offer-subtitle">Idéale pour se lancer rapidement</p>
+              <div class="offer-price">
+                <span class="offer-price-amount">300€</span>
+                <span class="offer-price-note">à partir de</span>
+              </div>
+              <ul class="offer-list">
+                <li>Une page vitrine claire et professionnelle</li>
+                <li>Contenu adapté à votre métier</li>
+                <li>Adapté au SEO local (Google Maps, recherche par ville)</li>
+                <li>Formulaire de contact et appel à l'action</li>
+                <li>Livraison en 10-15 jours ouvrés</li>
+                <li>Formation et accompagnement inclus</li>
+              </ul>
+              <button class="btn-secondary open-modal" data-modal-type="appel">Prendre rendez-vous</button>
+            </article>
+
+            <article class="offer-card offer-card-main">
+              <div class="offer-badge offer-badge-main">2</div>
+              <h3 class="offer-title">Offre personnalisée</h3>
+              <p class="offer-subtitle">Uniquement sur devis</p>
+              <ul class="offer-list">
+                <li>Nombre de pages illimité selon vos besoins</li>
+                <li>Pages services détaillées pour chaque activité</li>
+                <li>Optimisation SEO avancée</li>
+                <li>Accompagnement sur la stratégie web</li>
+              </ul>
+              <button class="btn-primary open-modal" data-modal-type="devis">Demander un devis</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5 - FAQ -->
+      <section id="faq" class="section faq">
+        <div class="container">
+          <h2 class="section-title center">FAQ</h2>
+          <div class="faq-box">
+            <details class="faq-item" open>
+              <summary>Combien de temps pour créer mon site&nbsp;?</summary>
+              <p>
+                Pour l’offre de départ, comptez entre 10 et 15 jours ouvrés à
+                partir du moment où tous les contenus sont validés. Pour une
+                offre personnalisée, le délai est adapté à la taille du projet.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Ai-je besoin de rédiger tous les textes&nbsp;?</summary>
+              <p>
+                Non. Nous pouvons partir de vos documents existants (devis,
+                plaquettes, fiches métiers) et les adapter pour le web tout en
+                respectant votre manière de parler à vos clients.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Le site sera-t-il bien référencé sur Google&nbsp;?</summary>
+              <p>
+                Votre site est conçu dès le départ pour le référencement
+                naturel&nbsp;: structure claire, mots-clés locaux, temps de
+                chargement optimisé et affichage adapté au mobile.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Que se passe-t-il après la livraison&nbsp;?</summary>
+              <p>
+                Vous gardez la main sur votre site. En option, nous pouvons
+                également gérer pour vous les mises à jour, petites
+                modifications et évolutions.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <span>© <span id="year"></span> Web Artisant. Tous droits réservés.</span>
+          <span>Spécialiste des sites vitrines pour artisans.</span>
+        </div>
+        <div class="footer-links">
+          <a href="#mentions-legales">Mentions légales</a>
+          <a href="#politique-confidentialite">Politique de confidentialité</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- POPUP MODAL -->
+    <div id="contactModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-overlay" aria-hidden="true"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Fermer" id="closeModal" type="button">×</button>
+        <h2 class="modal-title" id="modalTitle">Réserver un appel</h2>
+        <form id="contactForm" class="contact-form" novalidate>
+          <!-- Honeypot anti-spam (caché) -->
+          <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px;" aria-hidden="true">
+          <div class="form-group">
+            <label for="firstName">Prénom *</label>
+            <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
+          </div>
+          <div class="form-group form-group-devis">
+            <label for="lastName">Nom <span class="required-devis">*</span></label>
+            <input type="text" id="lastName" name="lastName" autocomplete="family-name">
+          </div>
+          <div class="form-group form-group-devis">
+            <label for="email">Email <span class="required-devis">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Numéro de téléphone *</label>
+            <input type="tel" id="phone" name="phone" required autocomplete="tel">
+          </div>
+          <div class="form-group form-group-devis">
+            <label for="job">Métier</label>
+            <input type="text" id="job" name="job" autocomplete="organization-title" placeholder="Ex: Plombier, Menuisier...">
+          </div>
+          <div class="form-group form-group-devis">
+            <label for="city">Ville</label>
+            <input type="text" id="city" name="city" autocomplete="address-level2" placeholder="Ex: Lyon, Paris...">
+          </div>
+          <button type="submit" class="btn-primary btn-submit">Envoyer</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js" defer></script>
+        
+        if (!header || !whySection) {
+          console.error("Header ou section #why introuvable");
+          return;
+        }
+
+        // S'assurer que le header est caché au départ
+        header.classList.remove("header-visible");
+
+        function updateHeaderVisibility() {
+          const whyRect = whySection.getBoundingClientRect();
+          // Le header apparaît quand le haut de la section "why" atteint le tiers supérieur de l'écran
+          const shouldShow = whyRect.top <= window.innerHeight * 0.3;
+          
+          if (shouldShow) {
+            header.classList.add("header-visible");
+          } else {
+            header.classList.remove("header-visible");
+          }
+        }
+
+        // Vérifier immédiatement au chargement
+        updateHeaderVisibility();
+
+        // Utiliser IntersectionObserver pour une meilleure performance
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                updateHeaderVisibility();
+              });
+            },
+            {
+              root: null,
+              rootMargin: "-30% 0px -70% 0px",
+              threshold: [0, 0.1, 0.2, 0.3],
+            }
+          );
+          observer.observe(whySection);
+        } else {
+          // Fallback avec scroll pour les anciens navigateurs
+          window.addEventListener("scroll", updateHeaderVisibility, { passive: true });
+          window.addEventListener("resize", updateHeaderVisibility, { passive: true });
+        }
+      }
+
+      // Attendre que le DOM soit complètement chargé
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initHeaderVisibility);
+      } else {
+        // DOM déjà chargé, exécuter immédiatement
+        initHeaderVisibility();
+      }
+
+
+      // Fonctionnalité du carrousel de portfolio infini (statique)
+      function initPortfolioCarousel() {
+        const carouselTrack = document.getElementById('portfolioCarousel');
+        const nextButton = document.getElementById('carouselNext');
+        
+        if (!carouselTrack || !nextButton) return;
+
+        const originalItems = carouselTrack.querySelectorAll('.portfolio-item');
+        const totalItems = originalItems.length;
+        
+        if (totalItems === 0) return;
+
+        // Dupliquer les éléments pour créer une boucle infinie
+        originalItems.forEach(item => {
+          const clone = item.cloneNode(true);
+          carouselTrack.appendChild(clone);
+        });
+
+        const allItems = carouselTrack.querySelectorAll('.portfolio-item');
+        let currentIndex = 0;
+        let isTransitioning = false;
+
+        function getItemsPerView() {
+          const width = window.innerWidth;
+          if (width <= 640) return 1;
+          if (width <= 900) return 2;
+          return 3;
+        }
+
+        function updateCarousel(instant = false) {
+          if (isTransitioning && !instant) return;
+          
+          const itemsPerView = getItemsPerView();
+          const itemWidth = allItems[0] ? allItems[0].offsetWidth + 22 : 0; // 22px = gap
+          
+          // Si on dépasse la fin des éléments originaux, revenir au début
+          if (currentIndex >= totalItems) {
+            currentIndex = 0;
+            carouselTrack.style.transition = 'none';
+            carouselTrack.style.transform = `translateX(0px)`;
+            // Forcer un reflow pour que la transition se réinitialise
+            void carouselTrack.offsetWidth;
+            carouselTrack.style.transition = '';
+          }
+          
+          // Si on va en arrière au-delà du début, aller à la fin
+          if (currentIndex < 0) {
+            currentIndex = totalItems - 1;
+            carouselTrack.style.transition = 'none';
+            const translateX = -currentIndex * itemWidth;
+            carouselTrack.style.transform = `translateX(${translateX}px)`;
+            void carouselTrack.offsetWidth;
+            carouselTrack.style.transition = '';
+          }
+
+          const translateX = -currentIndex * itemWidth;
+          carouselTrack.style.transform = `translateX(${translateX}px)`;
+        }
+
+        function goToNext() {
+          if (isTransitioning) return;
+          isTransitioning = true;
+          currentIndex++;
+          updateCarousel();
+          
+          setTimeout(() => {
+            isTransitioning = false;
+          }, 500); // Durée de la transition CSS
+        }
+
+        // Seulement le bouton next fonctionne, pas d'auto-play
+        nextButton.addEventListener('click', goToNext);
+
+        // Gestion du redimensionnement de la fenêtre
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            updateCarousel(true);
+          }, 250);
+        });
+
+        // Initialiser l'état
+        updateCarousel(true);
+      }
+
+      // Initialiser le carrousel
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initPortfolioCarousel);
+      } else {
+        initPortfolioCarousel();
+      }
+
+      // Gestion du popup modal
+      function initModal() {
+        const modal = document.getElementById("contactModal");
+        const closeBtn = document.getElementById("closeModal");
+        const openButtons = document.querySelectorAll(".open-modal");
+        const modalTitle = document.getElementById("modalTitle");
+        const form = document.getElementById("contactForm");
+        const overlay = modal.querySelector(".modal-overlay");
+
+        if (!modal || !closeBtn || !form) return;
+
+        // Fonction pour ouvrir le modal
+        function openModal(modalType) {
+          // Changer le titre selon le type
+          if (modalType === "devis") {
+            modalTitle.textContent = "Demander un devis";
+          } else {
+            modalTitle.textContent = "Réserver un appel";
+          }
+          
+          modal.classList.add("active");
+          document.body.style.overflow = "hidden"; // Empêcher le scroll de la page
+        }
+
+        // Fonction pour fermer le modal
+        function closeModal() {
+          modal.classList.remove("active");
+          document.body.style.overflow = ""; // Réactiver le scroll
+          form.reset(); // Réinitialiser le formulaire
+        }
+
+        // Ouvrir le modal au clic sur les boutons
+        openButtons.forEach(button => {
+          button.addEventListener("click", (e) => {
+            e.preventDefault();
+            const modalType = button.getAttribute("data-modal-type") || "appel";
+            openModal(modalType);
+          });
+        });
+
+        // Fermer le modal
+        closeBtn.addEventListener("click", closeModal);
+        overlay.addEventListener("click", closeModal);
+
+        // Fermer avec la touche Escape
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && modal.classList.contains("active")) {
+            closeModal();
+          }
+        });
+
+        // Gestion de la soumission du formulaire
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          
+          // Désactiver le bouton pendant l'envoi
+          const submitBtn = form.querySelector('.btn-submit');
+          const originalText = submitBtn.textContent;
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Envoi en cours...";
+          
+          // Récupérer les valeurs du formulaire
+          const formData = {
+            firstName: document.getElementById("firstName").value,
+            lastName: document.getElementById("lastName").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            type: modalTitle.textContent.includes("devis") ? "devis" : "appel"
+          };
+
+          try {
+            // Envoyer les données au backend
+            const response = await fetch('/api/contact', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+              // Succès - Afficher un message de confirmation
+              alert("✅ Merci ! Votre demande a été enregistrée avec succès. Nous vous contacterons bientôt.");
+              closeModal();
+            } else {
+              // Erreur de validation
+              alert("❌ " + (data.message || "Une erreur est survenue. Veuillez réessayer."));
+            }
+          } catch (error) {
+            console.error("Erreur lors de l'envoi:", error);
+            alert("❌ Erreur de connexion. Veuillez vérifier que le serveur est démarré et réessayer.");
+          } finally {
+            // Réactiver le bouton
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          }
+        });
+      }
+
+      // Initialiser le modal
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initModal);
+      } else {
+        initModal();
+      }
+
+      // Animations au scroll (Intersection Observer) - pour les autres sections
+      function initScrollAnimations() {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        // Observer les éléments à animer (sauf les cartes process qui ont leur propre gestion)
+        const animatedElements = document.querySelectorAll(
+          '.offer-card, .faq-item, .benefit-card'
+        );
+
+        animatedElements.forEach((el, index) => {
+          // Initialiser les styles pour l'animation
+          if (el.classList.contains('benefit-card')) {
+            // Pour les cartes de bénéfices, utiliser le délai défini dans data-benefit
+            const delay = parseInt(el.getAttribute('data-benefit')) * 0.1;
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = `opacity 0.6s ease-out ${delay}s, transform 0.6s ease-out ${delay}s`;
+          } else {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
+          }
+          observer.observe(el);
+        });
+      }
+
+      // Dévoilement séquentiel des cartes process au scroll (style "cartes Pokémon")
+      function initProcessCardsReveal() {
+        const processSection = document.querySelector('#process');
+        if (!processSection) return;
+
+        const cards = document.querySelectorAll('.process-card');
+        const progressDots = document.querySelectorAll('.progress-dot');
+        const progressLine = document.querySelector('#processProgressLine');
+        const scrollHint = document.querySelector('#processScrollHint');
+        
+        if (cards.length === 0) return;
+
+        // Vérifier si l'utilisateur préfère les animations réduites
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // État initial : seule la première carte est visible
+        let revealedCount = 1; // La première carte est déjà visible
+        
+        // Fonction pour mettre à jour l'indicateur de progression
+        function updateProgress(step) {
+          // Mettre à jour les points de progression
+          progressDots.forEach((dot) => {
+            const dotStep = parseInt(dot.getAttribute('data-step'), 10);
+            if (dotStep <= step) {
+              dot.classList.add('active');
+            } else {
+              dot.classList.remove('active');
+            }
+          });
+
+          // Mettre à jour la barre de progression
+          if (progressLine) {
+            const percentage = ((step - 1) / (cards.length - 1)) * 100;
+            progressLine.style.setProperty('--progress-height', `${Math.max(0, percentage)}%`);
+          }
+        }
+        
+        updateProgress(1);
+
+        // Configuration de l'IntersectionObserver pour chaque carte
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.6 // Déclencher quand 60% de la carte est visible
+        };
+
+        const cardObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const card = entry.target;
+            const stepNumber = parseInt(card.getAttribute('data-step'), 10);
+
+            if (entry.isIntersecting && !card.classList.contains('revealed')) {
+              // Révéler la carte uniquement si toutes les précédentes sont révélées
+              if (stepNumber <= revealedCount + 1) {
+                revealCard(card, stepNumber, prefersReducedMotion);
+                revealedCount = Math.max(revealedCount, stepNumber);
+                updateProgress(revealedCount);
+                
+                // Masquer l'indicateur de scroll si toutes les cartes sont révélées
+                if (revealedCount >= cards.length && scrollHint) {
+                  scrollHint.classList.add('hidden');
+                }
+              }
+            }
+          });
+        }, observerOptions);
+
+        // Observer toutes les cartes sauf la première (déjà visible)
+        cards.forEach((card, index) => {
+          if (index > 0) {
+            cardObserver.observe(card);
+          }
+        });
+
+        // Fonction pour révéler une carte avec animation
+        function revealCard(card, stepNumber, reducedMotion) {
+          if (reducedMotion) {
+            // Animation réduite : simple fade-in
+            card.classList.add('revealed');
+            return;
+          }
+
+          // Animation complète style "carte Pokémon"
+          card.classList.add('revealing');
+          
+          // Après l'animation, marquer comme révélée
+          setTimeout(() => {
+            card.classList.remove('revealing');
+            card.classList.add('revealed');
+          }, 900);
+        }
+
+      }
+
+      // Initialiser les animations au scroll
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initScrollAnimations);
+      } else {
+        initScrollAnimations();
+      }
+
+      // Initialiser le dévoilement séquentiel des cartes process
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initProcessCardsReveal);
+      } else {
+        initProcessCardsReveal();
+      }
+
+      // Effet de parallaxe subtil pour le hero
+      function initParallax() {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+
+        window.addEventListener('scroll', () => {
+          const scrolled = window.pageYOffset;
+          const rate = scrolled * 0.3;
+          
+          if (scrolled < window.innerHeight) {
+            hero.style.transform = `translateY(${rate}px)`;
+          }
+        }, { passive: true });
+      }
+
+  </body>
+</html>
+
+

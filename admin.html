@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Web Artisant</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .admin-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent-yellow);
+    }
+    .admin-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2.5rem;
+      color: var(--accent-blue-dark);
+      margin: 0;
+    }
+    .refresh-btn {
+      padding: 10px 20px;
+      background: var(--accent-yellow);
+      color: var(--accent-blue-dark);
+      border: none;
+      border-radius: 999px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: transform var(--transition-fast), background var(--transition-fast);
+    }
+    .refresh-btn:hover {
+      transform: translateY(-2px);
+      background: var(--accent-yellow-light);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: var(--radius-medium);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+    .stat-number {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2.5rem;
+      color: var(--accent-blue-dark);
+      margin: 0;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-top: 5px;
+    }
+    .contacts-table {
+      width: 100%;
+      background: var(--card-bg);
+      border-radius: var(--radius-medium);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    .table-header {
+      background: var(--accent-blue-dark);
+      color: white;
+      padding: 15px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th {
+      background: var(--accent-blue);
+      color: white;
+      padding: 12px;
+      text-align: left;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    td {
+      padding: 12px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      font-size: 0.9rem;
+    }
+    tr:hover {
+      background: rgba(248, 181, 50, 0.1);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    .badge-appel {
+      background: var(--accent-yellow);
+      color: var(--accent-blue-dark);
+    }
+    .badge-devis {
+      background: var(--accent-blue);
+      color: white;
+    }
+    .delete-btn {
+      background: var(--accent-red);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: background var(--transition-fast);
+    }
+    .delete-btn:hover {
+      background: #c0392b;
+    }
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-main);
+    }
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-main);
+    }
+    .empty-state-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+      .admin-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      table {
+        font-size: 0.8rem;
+      }
+      th, td {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <div class="admin-header">
+      <h1 class="admin-title">📊 Administration - Demandes de Contact</h1>
+      <button class="refresh-btn" onclick="loadContacts()">🔄 Actualiser</button>
+    </div>
+
+    <div id="stats" class="stats-grid">
+      <!-- Les statistiques seront chargées dynamiquement -->
+    </div>
+
+    <div class="contacts-table">
+      <div class="table-header">Liste des demandes</div>
+      <div id="loading" class="loading">Chargement des données...</div>
+      <div id="contacts-container"></div>
+    </div>
+  </div>
+
+  <script>
+    // Charger les contacts au chargement de la page
+    document.addEventListener('DOMContentLoaded', () => {
+      loadContacts();
+    });
+
+    // Fonction pour charger les contacts
+    async function loadContacts() {
+      const loadingEl = document.getElementById('loading');
+      const containerEl = document.getElementById('contacts-container');
+      const statsEl = document.getElementById('stats');
+
+      try {
+        loadingEl.style.display = 'block';
+        containerEl.innerHTML = '';
+
+        const response = await fetch('/api/contacts');
+        const data = await response.json();
+
+        if (data.success) {
+          const contacts = data.contacts;
+          
+          // Afficher les statistiques
+          displayStats(contacts);
+          
+          // Afficher le tableau
+          if (contacts.length === 0) {
+            containerEl.innerHTML = `
+              <div class="empty-state">
+                <div class="empty-state-icon">📭</div>
+                <p>Aucune demande pour le moment</p>
+              </div>
+            `;
+          } else {
+            displayContactsTable(contacts);
+          }
+        } else {
+          containerEl.innerHTML = '<p style="padding: 20px; color: var(--accent-red);">Erreur lors du chargement des données</p>';
+        }
+      } catch (error) {
+        console.error('Erreur:', error);
+        containerEl.innerHTML = '<p style="padding: 20px; color: var(--accent-red);">Erreur de connexion au serveur</p>';
+      } finally {
+        loadingEl.style.display = 'none';
+      }
+    }
+
+    // Afficher les statistiques
+    function displayStats(contacts) {
+      const total = contacts.length;
+      const appels = contacts.filter(c => c.type_demande === 'appel').length;
+      const devis = contacts.filter(c => c.type_demande === 'devis').length;
+      const aujourdhui = contacts.filter(c => {
+        const date = new Date(c.date_creation);
+        const aujourdhui = new Date();
+        return date.toDateString() === aujourdhui.toDateString();
+      }).length;
+
+      document.getElementById('stats').innerHTML = `
+        <div class="stat-card">
+          <p class="stat-number">${total}</p>
+          <p class="stat-label">Total des demandes</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number">${appels}</p>
+          <p class="stat-label">Demandes d'appel</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number">${devis}</p>
+          <p class="stat-label">Demandes de devis</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number">${aujourdhui}</p>
+          <p class="stat-label">Aujourd'hui</p>
+        </div>
+      `;
+    }
+
+    // Afficher le tableau des contacts
+    function displayContactsTable(contacts) {
+      const container = document.getElementById('contacts-container');
+      
+      let html = `
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Prénom</th>
+              <th>Nom</th>
+              <th>Email</th>
+              <th>Téléphone</th>
+              <th>Type</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      contacts.forEach(contact => {
+        const date = new Date(contact.date_creation);
+        const dateFormatted = date.toLocaleDateString('fr-FR', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+
+        html += `
+          <tr>
+            <td>#${contact.id}</td>
+            <td>${contact.prenom}</td>
+            <td>${contact.nom}</td>
+            <td><a href="mailto:${contact.email}">${contact.email}</a></td>
+            <td><a href="tel:${contact.telephone}">${contact.telephone}</a></td>
+            <td><span class="badge badge-${contact.type_demande}">${contact.type_demande}</span></td>
+            <td>${dateFormatted}</td>
+            <td>
+              <button class="delete-btn" onclick="deleteContact(${contact.id})">Supprimer</button>
+            </td>
+          </tr>
+        `;
+      });
+
+      html += `
+          </tbody>
+        </table>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    // Supprimer un contact
+    async function deleteContact(id) {
+      if (!confirm('Êtes-vous sûr de vouloir supprimer cette demande ?')) {
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/contacts/${id}`, {
+          method: 'DELETE'
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Demande supprimée avec succès');
+          loadContacts(); // Recharger la liste
+        } else {
+          alert('Erreur lors de la suppression');
+        }
+      } catch (error) {
+        console.error('Erreur:', error);
+        alert('Erreur de connexion au serveur');
+      }
+    }
+  </script>
+</body>
+</html>
+
