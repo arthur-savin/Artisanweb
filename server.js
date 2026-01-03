@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const compression = require('compression');
 const path = require('path');
 const { insertContact, getAllContacts, getContactById, deleteContact } = require('./database');
 
@@ -8,6 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
+app.use(compression()); // Compression Gzip pour tous les fichiers
 app.use(cors()); // Permettre les requêtes depuis le frontend
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

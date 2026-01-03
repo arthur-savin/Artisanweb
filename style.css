@@ -228,7 +228,6 @@ button {
   right: 0;
   z-index: 20;
   background: rgba(233, 227, 207, 0.98);
-  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   transform: translateY(-100%);
   opacity: 0;
@@ -425,6 +424,14 @@ button {
   border-radius: 50%;
   animation: pulse 4s ease-in-out infinite;
   pointer-events: none;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before {
+    animation: none;
+    will-change: auto;
+  }
 }
 
 .hero::after {
@@ -438,6 +445,14 @@ button {
   border-radius: 50%;
   animation: pulse 5s ease-in-out infinite 1s;
   pointer-events: none;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::after {
+    animation: none;
+    will-change: auto;
+  }
 }
 
 .hero-grid {
@@ -463,6 +478,14 @@ button {
   width: 100%;
   animation: fadeInScale 0.8s ease-out 0.2s both;
   position: relative;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo {
+    animation: none;
+    will-change: auto;
+  }
 }
 
 .hero-logo::after {
@@ -497,6 +520,14 @@ button {
   text-align: center;
   animation: fadeInUp 0.8s ease-out 0.3s both;
   position: relative;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-main-title {
+    animation: none;
+    will-change: auto;
+  }
 }
 
 .hero-main-title::before {
@@ -746,6 +777,14 @@ button {
   min-height: 230px;
   animation: fadeInScale 1s ease-out 0.6s both;
   z-index: 2;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-right {
+    animation: none;
+    will-change: auto;
+  }
 }
 
 .hero-card {
@@ -757,7 +796,6 @@ button {
               0 0 0 1px rgba(248, 181, 50, 0.1);
   overflow: hidden;
   transition: all var(--transition-smooth);
-  backdrop-filter: blur(10px);
 }
 
 .hero-card::before {
@@ -790,14 +828,17 @@ button {
 
 .hero-card-large {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .hero-card-medium {
   animation: float 7s ease-in-out infinite 1s;
+  will-change: transform;
 }
 
 .hero-card-small {
   animation: float 5.5s ease-in-out infinite 0.5s;
+  will-change: transform;
 }
 
 .hero-card-image {
@@ -947,7 +988,6 @@ button {
               0 0 0 1px rgba(248, 181, 50, 0.1);
   background: linear-gradient(135deg, #f4f2ea 0%, #ffffff 100%);
   transition: all var(--transition-smooth);
-  backdrop-filter: blur(10px);
 }
 
 .portfolio-item::before {
@@ -1137,7 +1177,6 @@ button {
   background: linear-gradient(135deg, 
     rgba(255, 255, 255, 0.95) 0%, 
     rgba(242, 240, 228, 0.9) 100%);
-  backdrop-filter: blur(20px) saturate(180%);
   border-radius: var(--radius-large);
   padding: 32px 28px;
   box-shadow: var(--shadow-card),
@@ -1807,7 +1846,6 @@ button {
   background: linear-gradient(135deg, 
     rgba(255, 255, 255, 0.9) 0%, 
     rgba(242, 240, 228, 0.8) 100%);
-  backdrop-filter: blur(20px);
   border-radius: var(--radius-large);
   box-shadow: var(--shadow-soft),
               0 0 0 1px rgba(248, 181, 50, 0.1);
@@ -2090,7 +2128,6 @@ button {
   background: linear-gradient(135deg, 
     rgba(255, 255, 255, 0.9) 0%, 
     rgba(242, 240, 228, 0.8) 100%);
-  backdrop-filter: blur(20px) saturate(180%);
   padding: 30px 26px;
   box-shadow: var(--shadow-soft),
               0 0 0 1px rgba(248, 181, 50, 0.1),
@@ -2177,7 +2214,6 @@ button {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
 }
 
 .modal-content {
@@ -2376,7 +2412,6 @@ button {
     right: 0;
     flex-direction: column;
     background: rgba(233, 227, 207, 0.98);
-    backdrop-filter: blur(12px);
     padding: 20px;
     gap: 16px;
     border-top: 1px solid rgba(0, 0, 0, 0.04);

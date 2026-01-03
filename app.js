@@ -11,6 +11,30 @@ function ready(fn) {
   }
 }
 
+// Throttle pour optimiser les événements scroll/resize (60fps = ~16ms)
+function throttle(func, wait = 16) {
+  let timeout;
+  let previous = 0;
+  return function(...args) {
+    const now = Date.now();
+    const remaining = wait - (now - previous);
+    if (remaining <= 0 || remaining > wait) {
+      if (timeout) {
+        clearTimeout(timeout);
+        timeout = null;
+      }
+      previous = now;
+      func.apply(this, args);
+    } else if (!timeout) {
+      timeout = setTimeout(() => {
+        previous = Date.now();
+        timeout = null;
+        func.apply(this, args);
+      }, remaining);
+    }
+  };
+}
+
 // Année automatique
 ready(() => {
   const yearEl = document.getElementById("year");
@@ -54,8 +78,8 @@ function initHeaderVisibility() {
     );
     observer.observe(whySection);
   } else {
-    window.addEventListener("scroll", updateHeaderVisibility, { passive: true });
-    window.addEventListener("resize", updateHeaderVisibility, { passive: true });
+    window.addEventListener("scroll", throttle(updateHeaderVisibility, 16), { passive: true });
+    window.addEventListener("resize", throttle(updateHeaderVisibility, 16), { passive: true });
   }
 }
 
@@ -95,12 +119,12 @@ function initMobileMenu() {
     });
   });
 
-  // Fermer le menu au resize si on passe en desktop
-  window.addEventListener('resize', () => {
+  // Fermer le menu au resize si on passe en desktop (throttlé)
+  window.addEventListener('resize', throttle(() => {
     if (window.innerWidth > 768 && menuToggle.classList.contains('active')) {
       toggleMenu();
     }
-  }, { passive: true });
+  }, 100), { passive: true });
 }
 
 ready(initMobileMenu);
@@ -569,14 +593,14 @@ function initParallax() {
     return; // Désactiver le parallaxe
   }
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', throttle(() => {
     const scrolled = window.pageYOffset;
     const rate = scrolled * 0.3;
     
     if (scrolled < window.innerHeight) {
       hero.style.transform = `translateY(${rate}px)`;
     }
-  }, { passive: true });
+  }, 16), { passive: true });
 }
 
 ready(initParallax);
