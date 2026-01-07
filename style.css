@@ -70,12 +70,48 @@
   }
 }
 
+@keyframes pulseButton {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
   }
   50% {
     transform: translateY(-20px);
+  }
+}
+
+@keyframes cardLift {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    box-shadow: var(--shadow-card), 
+                0 0 0 1px rgba(248, 181, 50, 0.1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.015) rotate(0.5deg);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15),
+                0 0 0 2px rgba(248, 181, 50, 0.15);
+  }
+  100% {
+    transform: translateY(-8px) scale(1.03) rotate(1deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2),
+                0 0 0 4px rgba(248, 181, 50, 0.2);
   }
 }
 
@@ -705,12 +741,19 @@ button {
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-yellow-light) 100%);
-  animation: fadeInUp 0.8s ease-out 0.5s both, pulse 2s ease-in-out infinite 1s;
+  animation: slideInUp 0.8s ease-out 0.5s both, pulseButton 2s ease-in-out infinite 1s;
   width: 100%;
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
   z-index: 2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, opacity 0.3s ease;
+  color: var(--accent-blue-dark);
+  text-decoration: none;
+  /* Le texte doit toujours être visible - forcer l'opacité */
+  opacity: 1 !important;
+  /* Le texte doit être au-dessus de tous les effets */
+  isolation: isolate;
 }
 
 .hero-cta::before {
@@ -721,6 +764,7 @@ button {
   border: 2px solid rgba(255, 255, 255, 0.9);
   pointer-events: none;
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  z-index: 0;
 }
 
 .hero-cta::after {
@@ -734,6 +778,10 @@ button {
   background: rgba(255, 255, 255, 0.3);
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
+  z-index: 0;
+  pointer-events: none;
+  /* S'assurer que l'effet ne couvre jamais le texte */
+  mix-blend-mode: screen;
 }
 
 .hero-cta:hover {
@@ -754,7 +802,7 @@ button {
   transform: translateY(-2px) scale(1.01);
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(.hero-cta) {
   transform: translateY(-1px);
   background: var(--accent-yellow-light);
   box-shadow: var(--shadow-card);
@@ -795,7 +843,11 @@ button {
   box-shadow: var(--shadow-card), 
               0 0 0 1px rgba(248, 181, 50, 0.1);
   overflow: hidden;
-  transition: all var(--transition-smooth);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+              border-color 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+              z-index 0s;
+  z-index: 1;
 }
 
 .hero-card::before {
@@ -820,6 +872,7 @@ button {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2),
               0 0 0 4px rgba(248, 181, 50, 0.2);
   border-color: rgba(248, 181, 50, 0.4);
+  z-index: 10;
 }
 
 .hero-card:hover::before {
@@ -908,6 +961,7 @@ button {
   height: 85%;
   top: 12%;
   right: 0;
+  z-index: 1;
 }
 
 .hero-card-medium {
@@ -915,6 +969,7 @@ button {
   height: 70%;
   top: 0;
   left: 22%;
+  z-index: 2;
 }
 
 .hero-card-small {
@@ -922,6 +977,7 @@ button {
   height: 62%;
   bottom: -6%;
   right: 4%;
+  z-index: 3;
 }
 
 /* Adaptation responsive des cartes hero */
@@ -963,17 +1019,32 @@ button {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  padding: 40px 90px 0 90px;
 }
 
 .portfolio-carousel-track {
   display: flex;
   gap: 22px;
-  transition: transform 0.5s ease-out;
   will-change: transform;
   width: fit-content;
   overflow: visible;
   flex: 1;
+  animation: scrollCarousel 30s linear infinite;
+}
+
+@keyframes scrollCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.portfolio-carousel-track.paused {
+  animation-play-state: paused;
 }
 
 .portfolio-item {
@@ -1275,11 +1346,16 @@ button {
   box-shadow: var(--shadow-soft),
               0 0 0 1px rgba(248, 181, 50, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.5);
-  transition: all var(--transition-smooth);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              border-color 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              z-index 0s,
+              opacity var(--transition-smooth);
   opacity: 0;
   transform: translateY(30px);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .benefit-card::before {
@@ -1307,10 +1383,11 @@ button {
 }
 
 .benefit-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.02);
   box-shadow: 0 18px 35px rgba(248, 181, 50, 0.2),
               0 0 0 3px rgba(248, 181, 50, 0.2);
   border-color: rgba(248, 181, 50, 0.4);
+  z-index: 10;
 }
 
 .benefit-icon {
@@ -2325,6 +2402,11 @@ button {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Masquer les boutons de navigation du carousel */
+.portfolio-carousel .hero-arrow {
+  display: none;
+}
+
 /* FOOTER */
 .site-footer {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -2507,7 +2589,7 @@ button {
   /* CARROUSEL */
   .portfolio-carousel {
     overflow: hidden;
-    padding: 0 50px;
+    padding: 30px 80px 0 80px;
     position: relative;
   }
 
@@ -2692,7 +2774,7 @@ button {
 
   /* CARROUSEL */
   .portfolio-carousel {
-    padding: 0 45px;
+    padding: 25px 70px 0 70px;
     overflow: hidden;
   }
 

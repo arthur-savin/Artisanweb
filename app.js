@@ -144,17 +144,14 @@ function initPortfolioCarousel() {
   
   if (totalItems === 0) return;
 
-  // Dupliquer les éléments pour créer une boucle infinie
+  // Dupliquer les éléments une fois pour créer une boucle infinie fluide
+  // On duplique 1 fois pour avoir exactement 2 sets (original + copie)
   originalItems.forEach(item => {
     const clone = item.cloneNode(true);
     carouselTrack.appendChild(clone);
   });
 
-  const allItems = carouselTrack.querySelectorAll('.portfolio-item');
-  let currentIndex = 0;
-  let isTransitioning = false;
-
-  // Créer le bouton précédent
+  // Créer le bouton précédent (même s'il est masqué)
   const prevButton = document.createElement('button');
   prevButton.className = 'hero-arrow hero-arrow-left';
   prevButton.type = 'button';
@@ -162,94 +159,17 @@ function initPortfolioCarousel() {
   prevButton.innerHTML = '←';
   carouselContainer.appendChild(prevButton);
 
-  function getItemsPerView() {
-    const width = window.innerWidth;
-    if (width <= 480) return 1;
-    if (width <= 768) return 1;
-    if (width <= 1024) return 2;
-    return 3;
-  }
+  // L'animation CSS déplace de -50% ce qui correspond exactement à la moitié
+  // des éléments (le set original), créant une boucle infinie fluide
 
-  function updateCarousel(instant = false) {
-    if (isTransitioning && !instant) return;
-    
-    const itemsPerView = getItemsPerView();
-    const itemWidth = allItems[0] ? allItems[0].offsetWidth + 22 : 0;
-    
-    if (currentIndex >= totalItems) {
-      currentIndex = 0;
-      carouselTrack.style.transition = 'none';
-      carouselTrack.style.transform = `translateX(0px)`;
-      void carouselTrack.offsetWidth;
-      carouselTrack.style.transition = '';
-    }
-    
-    if (currentIndex < 0) {
-      currentIndex = totalItems - 1;
-      carouselTrack.style.transition = 'none';
-      const translateX = -currentIndex * itemWidth;
-      carouselTrack.style.transform = `translateX(${translateX}px)`;
-      void carouselTrack.offsetWidth;
-      carouselTrack.style.transition = '';
-    }
+  // Pause au survol pour permettre de regarder les éléments
+  carouselContainer.addEventListener('mouseenter', () => {
+    carouselTrack.classList.add('paused');
+  });
 
-    const translateX = -currentIndex * itemWidth;
-    carouselTrack.style.transform = `translateX(${translateX}px)`;
-  }
-
-  function goToNext() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    currentIndex++;
-    updateCarousel();
-    setTimeout(() => { isTransitioning = false; }, 500);
-  }
-
-  function goToPrev() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    currentIndex--;
-    updateCarousel();
-    setTimeout(() => { isTransitioning = false; }, 500);
-  }
-
-  nextButton.addEventListener('click', goToNext);
-  prevButton.addEventListener('click', goToPrev);
-
-  // Support swipe mobile
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  carouselTrack.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-
-  carouselTrack.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
-
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-    
-    if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
-        goToNext();
-      } else {
-        goToPrev();
-      }
-    }
-  }
-
-  // Gestion du redimensionnement
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => updateCarousel(true), 250);
-  }, { passive: true });
-
-  updateCarousel(true);
+  carouselContainer.addEventListener('mouseleave', () => {
+    carouselTrack.classList.remove('paused');
+  });
 }
 
 ready(initPortfolioCarousel);
