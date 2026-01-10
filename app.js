@@ -525,3 +525,37 @@ function initParallax() {
 
 ready(initParallax);
 
+// ============================================
+// FILTRAGE PAR CATÉGORIES BLOG
+// ============================================
+function initBlogCategories() {
+  const categoryButtons = document.querySelectorAll('.blog-category-btn');
+  const blogCards = document.querySelectorAll('.blog-card');
+  
+  if (categoryButtons.length === 0 || blogCards.length === 0) return;
+  
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.getAttribute('data-category');
+      
+      // Mettre à jour les boutons actifs
+      categoryButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      // Filtrer les articles
+      blogCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        
+        if (category === 'all' || cardCategory === category) {
+          card.style.display = '';
+          card.style.animation = 'fadeInUp 0.5s ease-out';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+ready(initBlogCategories);
+
