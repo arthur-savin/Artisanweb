@@ -31,7 +31,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="blog-page">
     <!-- Skip link pour navigation clavier -->
     <a class="skip-link" href="#blog-hero">Aller au contenu</a>
     
@@ -86,16 +86,41 @@
         <div class="container">
           <!-- Filtres par catégories -->
           <div class="blog-categories">
-            <button class="blog-category-btn active" data-category="all">Tous les articles</button>
-            <button class="blog-category-btn" data-category="electricien">Électricien</button>
-            <button class="blog-category-btn" data-category="plombier">Plombier</button>
-            <button class="blog-category-btn" data-category="menuisier">Menuisier</button>
-            <button class="blog-category-btn" data-category="macon">Maçon</button>
-            <button class="blog-category-btn" data-category="peintre">Peintre</button>
+            <button class="blog-category-btn active" data-category="all">TOUS LES ARTICLES</button>
+            <button class="blog-category-btn" data-category="electricien">ÉLECTRICIEN</button>
+            <button class="blog-category-btn" data-category="plombier">PLOMBIER</button>
+            <button class="blog-category-btn" data-category="menuisier">MENUISIER</button>
+            <button class="blog-category-btn" data-category="macon">MAÇON</button>
+            <button class="blog-category-btn" data-category="peintre">PEINTRE</button>
           </div>
           
           <div class="blog-articles-grid">
-            <!-- Article 1 - Électricien -->
+            <!-- Article 1 - Multi-catégories -->
+            <article class="blog-card" data-category="electricien plombier menuisier macon peintre">
+              <div class="blog-card-image-wrapper">
+                <div class="blog-card-image-placeholder">
+                  <span class="blog-card-image-icon">🛡️</span>
+                </div>
+                <div class="blog-card-category">Crédibilité</div>
+              </div>
+              <div class="blog-card-content">
+                <div class="blog-card-meta">
+                  <time datetime="2024-02-10">10 Février 2024</time>
+                  <span class="blog-card-read-time">7 min de lecture</span>
+                </div>
+                <h2 class="blog-card-title">
+                  Pourquoi un site web rassure plus qu'un simple numéro de téléphone
+                </h2>
+                <p class="blog-card-excerpt">
+                  Un simple numéro de téléphone ne suffit plus. Découvrez pourquoi un site web professionnel 
+                  rassure les clients avant même le premier contact. Valable pour tous les artisans : 
+                  électricien, plombier, menuisier, maçon, peintre, couvreur, carreleur et plus.
+                </p>
+                <a href="article-site-web-rassure.html" class="blog-card-link">Lire l'article →</a>
+              </div>
+            </article>
+
+            <!-- Article 2 - Électricien -->
             <article class="blog-card" data-category="electricien">
               <div class="blog-card-image-wrapper">
                 <div class="blog-card-image-placeholder">
@@ -265,7 +290,7 @@
       </div>
     </footer>
 
-    <script src="app.min.js" defer></script>
+    <script src="app.js" defer></script>
   </body>
 </html>
 

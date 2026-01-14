@@ -48,39 +48,24 @@ ready(() => {
 // ============================================
 function initHeaderVisibility() {
   const header = document.querySelector(".site-header");
-  const whySection = document.querySelector("#why");
-  
-  if (!header || !whySection) return;
+  if (!header) return;
 
-  header.classList.remove("header-visible");
+  // Vérifier si on est sur une page de blog ou d'article
+  const isBlogPage = document.querySelector("body.blog-page") || 
+                     window.location.pathname.includes("blog") || 
+                     window.location.pathname.includes("article-");
+  const isArticlePage = document.querySelector("body.article-page") || 
+                        document.querySelector(".article-page") ||
+                        document.querySelector("#article-content");
 
-  function updateHeaderVisibility() {
-    const whyRect = whySection.getBoundingClientRect();
-    const shouldShow = whyRect.top <= window.innerHeight * 0.3;
-    
-    if (shouldShow) {
-      header.classList.add("header-visible");
-    } else {
-      header.classList.remove("header-visible");
-    }
+  // Si on est sur une page de blog ou d'article, rendre le header toujours visible
+  if (isBlogPage || isArticlePage) {
+    header.classList.add("header-always-visible");
+    return; // Ne pas appliquer la logique de visibilité conditionnelle
   }
 
-  updateHeaderVisibility();
-
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      () => updateHeaderVisibility(),
-      {
-        root: null,
-        rootMargin: "-30% 0px -70% 0px",
-        threshold: [0, 0.1, 0.2, 0.3],
-      }
-    );
-    observer.observe(whySection);
-  } else {
-    window.addEventListener("scroll", throttle(updateHeaderVisibility, 16), { passive: true });
-    window.addEventListener("resize", throttle(updateHeaderVisibility, 16), { passive: true });
-  }
+  // Sur la page principale, rendre le header toujours visible (sticky)
+  header.classList.add("header-visible");
 }
 
 ready(initHeaderVisibility);
@@ -534,27 +519,67 @@ function initBlogCategories() {
   
   if (categoryButtons.length === 0 || blogCards.length === 0) return;
   
+  let filterTimeout = null;
+  
   categoryButtons.forEach(button => {
     button.addEventListener('click', () => {
       const category = button.getAttribute('data-category');
+      
+      // Annuler les timeouts précédents si l'utilisateur clique rapidement
+      if (filterTimeout) {
+        clearTimeout(filterTimeout);
+      }
       
       // Mettre à jour les boutons actifs
       categoryButtons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
       
-      // Filtrer les articles
-      blogCards.forEach(card => {
+      // Filtrer les articles avec animation fluide
+      let visibleIndex = 0;
+      blogCards.forEach((card) => {
         const cardCategory = card.getAttribute('data-category');
+        // Support des catégories multiples (séparées par des espaces) et de 'all'
+        const cardCategories = cardCategory ? cardCategory.split(' ') : [];
+        const shouldShow = category === 'all' || cardCategories.includes(category);
         
-        if (category === 'all' || cardCategory === category) {
+        if (shouldShow) {
+          // Afficher la carte immédiatement
           card.style.display = '';
-          card.style.animation = 'fadeInUp 0.5s ease-out';
+          // Retirer la classe hidden
+          card.classList.remove('blog-card-hidden');
+          // Réinitialiser le délai d'animation pour effet cascade
+          card.style.animationDelay = `${visibleIndex * 0.1}s`;
+          // Forcer le reflow pour déclencher l'animation
+          void card.offsetHeight;
+          card.classList.add('blog-card-visible');
+          visibleIndex++;
         } else {
-          card.style.display = 'none';
+          // Masquer la carte avec transition
+          card.classList.remove('blog-card-visible');
+          card.classList.add('blog-card-hidden');
         }
       });
+      
+      // Après la transition, cacher complètement les cartes masquées
+      filterTimeout = setTimeout(() => {
+        blogCards.forEach((card) => {
+          const cardCategory = card.getAttribute('data-category');
+          // Support des catégories multiples (séparées par des espaces) et de 'all'
+          const cardCategories = cardCategory ? cardCategory.split(' ') : [];
+          const shouldShow = category === 'all' || cardCategories.includes(category);
+          if (!shouldShow && card.classList.contains('blog-card-hidden')) {
+            card.style.display = 'none';
+          }
+        });
+      }, 300);
     });
   });
+  
+  // Initialiser avec la catégorie "all" active par défaut
+  const allButton = Array.from(categoryButtons).find(btn => btn.getAttribute('data-category') === 'all');
+  if (allButton) {
+    allButton.click();
+  }
 }
 
 ready(initBlogCategories);

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menuiserie sur mesure Toulouse : Fenêtres PVC/ALU, Dressings, Cuisines, Escaliers. Certification RGE Qualibat. Devis gratuit sous 48h. Fabrication française.">
+    <meta name="keywords" content="menuiserie sur mesure, pose fenêtres PVC, pose fenêtres alu, rénovation énergétique, dressing sur mesure, escalier bois, Toulouse">
+    <title>Menuiserie sur mesure Toulouse | Fenêtres, Dressings, Cuisines | RGE Qualibat</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ============================================
+         HEADER / NAVIGATION
+         ============================================ -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <a href="#hero" aria-label="Retour à l'accueil">
+                    <!-- LOGO À INSÉRER ICI -->
+                    <span class="logo-text">Menuiserie Artisanale Dubois</span>
+                </a>
+            </div>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="#services" class="nav__link">Nos Services</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#realisations" class="nav__link">Réalisations</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#processus" class="nav__link">Notre Processus</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#faq" class="nav__link">FAQ</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav__cta">
+                <a href="#contact" class="btn btn--primary">
+                    <span class="btn__badge">⚡</span>
+                    Devis Gratuit sous 48h
+                </a>
+            </div>
+            
+            <div class="nav__toggle" id="nav-toggle" aria-label="Menu mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         SECTION HERO (Haut de page)
+         ============================================ -->
+    <section class="hero" id="hero">
+        <div class="hero__container container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    Menuiserie sur mesure 
+                    <span class="hero__title--highlight">Confort, Isolation & Esthétique</span>
+                </h1>
+                
+                <p class="hero__subtitle">
+                    Artisan menuisier certifié RGE Qualibat, nous transformons votre intérieur 
+                    avec un savoir-faire artisanal d'exception. Fenêtres performantes, 
+                    aménagements sur-mesure et finitions irréprochables pour votre confort quotidien.
+                </p>
+                
+                <div class="hero__cta-group">
+                    <a href="#contact" class="btn btn--primary btn--large">
+                        Mon projet sur-mesure
+                    </a>
+                    <a href="#realisations" class="btn btn--secondary btn--large">
+                        Voir nos réalisations
+                    </a>
+                </div>
+                
+                <!-- Indicateurs de confiance rapides -->
+                <div class="hero__trust">
+                    <div class="trust-item">
+                        <span class="trust-icon">✓</span>
+                        <span>Devis gratuit sous 48h</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">✓</span>
+                        <span>Certification RGE Qualibat</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">✓</span>
+                        <span>Fabrication française</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- VISUEL HERO : 
+             Image de fond : Grande photo d'une pièce de vie lumineuse avec de belles fenêtres 
+             ou un aménagement bois détaillé (dressing/cuisine). 
+             Overlay léger pour la lisibilité du texte.
+             Format : 1920x1080px minimum, optimisée WebP -->
+        <div class="hero__image" style="background-image: url('Images/Hero.png');">
+            <div class="hero__overlay"></div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION ENGAGEMENTS (Barre de confiance)
+         ============================================ -->
+    <section class="engagements" id="engagements">
+        <div class="container">
+            <div class="engagements__grid">
+                <div class="engagement-card">
+                    <div class="engagement-card__icon">
+                        <img src="Images/logo certif/drapeau france.png" alt="Drapeau français - Fabrication française" width="40" height="40" loading="lazy" />
+                    </div>
+                    <h3 class="engagement-card__title">Fabrication Française</h3>
+                    <p class="engagement-card__text">
+                        Tous nos produits sont fabriqués en France, 
+                        garantissant qualité et traçabilité.
+                    </p>
+                </div>
+                
+                <div class="engagement-card">
+                    <div class="engagement-card__icon">
+                        <img src="Images/logo certif/garantie.png" alt="Pictogramme de bouclier - Garantie décennale" width="40" height="40" loading="lazy" />
+                    </div>
+                    <h3 class="engagement-card__title">Garantie Décennale</h3>
+                    <p class="engagement-card__text">
+                        Protection complète de votre investissement 
+                        pendant 10 ans sur tous nos travaux.
+                    </p>
+                </div>
+                
+                <div class="engagement-card engagement-card--highlight">
+                    <div class="engagement-card__icon">
+                        <img src="Images/logo certif/certification.png" alt="Badge RGE Qualibat - Certification économies d'énergie" width="40" height="40" loading="lazy" />
+                    </div>
+                    <h3 class="engagement-card__title">Certification RGE Qualibat</h3>
+                    <p class="engagement-card__text">
+                        Éligible aux aides de l'État (MaPrimeRénov', CEE). 
+                        Réduction jusqu'à 90% de vos factures énergétiques.
+                    </p>
+                </div>
+                
+                <div class="engagement-card">
+                    <div class="engagement-card__icon">
+                        <img src="Images/logo certif/respect des délais.png" alt="Icône horloge - Respect des délais" width="40" height="40" loading="lazy" />
+                    </div>
+                    <h3 class="engagement-card__title">Délais Respectés</h3>
+                    <p class="engagement-card__text">
+                        Planning tenu, chantier propre et finitions soignées. 
+                        Votre satisfaction est notre priorité.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION SERVICES
+         ============================================ -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Services de Menuiserie sur Mesure</h2>
+                <p class="section-subtitle">
+                    De la rénovation énergétique à l'aménagement intérieur, 
+                    nous concevons et fabriquons vos projets sur-mesure à Toulouse et ses environs.
+                </p>
+            </div>
+
+            <!-- MENUISERIE EXTÉRIEURE -->
+            <div class="services__category">
+                <div class="services__category-header">
+                    <h3 class="services__category-title">Menuiserie Extérieure</h3>
+                    <p class="services__category-subtitle">
+                        Isolation performante, sécurité renforcée et esthétique moderne 
+                        pour réduire vos factures énergétiques.
+                    </p>
+                </div>
+                
+                <div class="services__grid">
+                    <article class="service-card">
+                        <div class="service-card__image" style="background-image: url('Images/Fenêtres PVC &amp; Aluminium.png');">
+                            <!-- PHOTO : Fenêtre PVC ou ALU moderne dans une belle pièce lumineuse -->
+                            <div class="service-card__badge">RGE Qualibat</div>
+                        </div>
+                        <div class="service-card__content">
+                            <h4 class="service-card__title">Fenêtres PVC & Aluminium</h4>
+                            <p class="service-card__description">
+                                Fenêtres sur mesure à double ou triple vitrage, 
+                                performances thermiques optimales (Uw ≤ 1,0 W/m².K). 
+                                Réduction jusqu'à 30% de votre consommation énergétique.
+                            </p>
+                            <ul class="service-card__features">
+                                <li>✓ Isolation renforcée (classe A+ à A+++)</li>
+                                <li>✓ Réduction des nuisances sonores</li>
+                                <li>✓ Éligible MaPrimeRénov' jusqu'à 90€/m²</li>
+                                <li>✓ Finitions sur-mesure (couleurs, poignées)</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-card__image" style="background-image: url('Images/volets et persiennes.png');">
+                            <!-- PHOTO : Volets roulants ou battants élégants -->
+                        </div>
+                        <div class="service-card__content">
+                            <h4 class="service-card__title">Volets & Persiennes</h4>
+                            <p class="service-card__description">
+                                Volets roulants électriques ou battants en PVC, 
+                                aluminium ou bois. Protection solaire, isolation 
+                                thermique et sécurité renforcée.
+                            </p>
+                            <ul class="service-card__features">
+                                <li>✓ Motorisation domotique possible</li>
+                                <li>✓ Isolation supplémentaire (R jusqu'à 0,75 m².K/W)</li>
+                                <li>✓ Sécurité anti-effraction</li>
+                                <li>✓ Design personnalisé</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-card__image" style="background-image: url(&quot;Images/Portes d'Entrée.png&quot;);">
+                            <!-- PHOTO : Porte d'entrée moderne et sécurisée -->
+                        </div>
+                        <div class="service-card__content">
+                            <h4 class="service-card__title">Portes d'Entrée</h4>
+                            <p class="service-card__description">
+                                Portes d'entrée sur-mesure en aluminium ou PVC, 
+                                design contemporain, isolation renforcée et 
+                                sécurité certifiée A2P.
+                            </p>
+                            <ul class="service-card__features">
+                                <li>✓ Isolation thermique optimale</li>
+                                <li>✓ Sécurité renforcée (A2P 1 à 4 étoiles)</li>
+                                <li>✓ Design personnalisable</li>
+                                <li>✓ Finitions premium</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-card__image" style="background-image: url('Images/pergola.png');">
+                            <!-- PHOTO : Terrasse en bois ou composite élégante -->
+                        </div>
+                        <div class="service-card__content">
+                            <h4 class="service-card__title">Terrasses & Pergolas</h4>
+                            <p class="service-card__description">
+                                Terrasses sur-mesure en bois exotique, composite 
+                                ou aluminium. Pergolas bioclimatiques pour 
+                                profiter de votre extérieur toute l'année.
+                            </p>
+                            <ul class="service-card__features">
+                                <li>✓ Matériaux durables (classe 4)</li>
+                                <li>✓ Entretien minimal</li>
+                                <li>✓ Design sur-mesure</li>
+                                <li>✓ Aménagement complet</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- MENUISERIE INTÉRIEURE -->
+            <div class="services__category">
+                <div class="services__category-header">
+                    <h3 class="services__category-title">Menuiserie Intérieure</h3>
+                    <p class="services__category-subtitle">
+                        Aménagements sur-mesure pour optimiser votre espace : 
+                        design élégant et fonctionnalité maximale.
+                    </p>
+                </div>
+                
+                <div class="services__grid">
+                    <article class="service-card">
+                        <div class="service-card__image" style="background-image: url('Images/dressing.png');">
+                            <!-- PHOTO : Dressing sur-mesure élégant et organisé -->
+                        </div>
+                        <div class="service-card__content">
+                            <h4 class="service-card__title">Dressings sur Mesure</h4>
+                            <p class="service-card__description">
+                                Dressing intégré sur-mesure pour optimiser chaque 
+                                centimètre. Design élégant, rangements intelligents 
+                                et finitions haut de gamme.
+                            </p>
+                            <ul class="service-card__features">
+                                <li>✓ Optimisation de l'espace (gain jusqu'à 40%)</li>
+                                <li>✓ Finitions sur-mesure (bois massif, laqué, MDF)</li>
+                                <li>✓ Accessoires intégrés (tiroirs, étagères, penderies)</li>
+                                <li>✓ Design personnalisé selon vos besoins</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-card__image" style="background-image: url('Images/cuisine.png');">
+                            <!-- PHOTO : Cuisine moderne avec aménagement bois élégant -->
+                        </div>
+                        <div class="service-card__content">
+                            <h4 class="service-card__title">Cuisines sur Mesure</h4>
+                            <p class="service-card__description">
+                                Cuisine intégrée sur-mesure, design contemporain 
+                                et fonctionnel. Optimisation de l'espace, 
+                                rangements intelligents et finitions soignées.
+                            </p>
+                            <ul class="service-card__features">
+                                <li>✓ Design 3D avant fabrication</li>
+                                <li>✓ Rangements optimisés (tiroirs, placards)</li>
+                                <li>✓ Finitions premium (stratifié, laqué, bois massif)</li>
+                                <li>✓ Intégration électroménager</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-card__image" style="background-image: url('Images/escalier.png');">
+                            <!-- PHOTO : Escalier en bois massif élégant -->
+                        </div>
+                        <div class="service-card__content">
+                            <h4 class="service-card__title">Escaliers Bois</h4>
+                            <p class="service-card__description">
+                                Escalier sur-mesure en bois massif (chêne, hêtre, 
+                                noyer). Design contemporain ou classique, 
+                                fabrication artisanale et finitions irréprochables.
+                            </p>
+                            <ul class="service-card__features">
+                                <li>✓ Bois massif de qualité (chêne, hêtre, noyer)</li>
+                                <li>✓ Design sur-mesure (droit, tournant, hélicoïdal)</li>
+                                <li>✓ Finitions soignées (vernis, huile, cire)</li>
+                                <li>✓ Conformité normes de sécurité</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-card__image" style="background-image: url('Images/parquet.png');">
+                            <!-- PHOTO : Parquet en bois massif ou stratifié élégant -->
+                        </div>
+                        <div class="service-card__content">
+                            <h4 class="service-card__title">Parquets & Revêtements</h4>
+                            <p class="service-card__description">
+                                Parquet massif, stratifié ou vinyle sur-mesure. 
+                                Pose flottante ou collée, finitions soignées 
+                                pour un intérieur chaleureux et élégant.
+                            </p>
+                            <ul class="service-card__features">
+                                <li>✓ Parquet massif ou stratifié haut de gamme</li>
+                                <li>✓ Pose professionnelle (flottante ou collée)</li>
+                                <li>✓ Finitions sur-mesure (huile, vernis, cire)</li>
+                                <li>✓ Isolation phonique renforcée</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION GALERIE AVANT/APRÈS
+         ============================================ -->
+    <section class="realisations" id="realisations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Réalisations : Transformations Avant / Après</h2>
+                <p class="section-subtitle">
+                    Découvrez comment nous transformons les intérieurs avec des aménagements 
+                    sur-mesure et des finitions soignées. Chaque projet est unique.
+                </p>
+            </div>
+            
+            <!-- SLIDER AVANT/APRÈS -->
+            <div class="realisations__slider" id="realisations-slider">
+                <!-- SLIDE 1 -->
+                <div class="realisation-slide">
+                    <div class="realisation-slide__content">
+                        <div class="realisation-slide__image-before" style="background-image: url('Images/avant fenetres.png');">
+                            <!-- PHOTO AVANT : Pièce avec fenêtres anciennes, peu isolée -->
+                            <div class="realisation-slide__label">Avant</div>
+                        </div>
+                        <div class="realisation-slide__image-after" style="background-image: url('Images/Apres fenetres.png');">
+                            <!-- PHOTO APRÈS : Même pièce avec nouvelles fenêtres PVC, lumineuse et moderne -->
+                            <div class="realisation-slide__label">Après</div>
+                        </div>
+                    </div>
+                    <div class="realisation-slide__info">
+                        <h3 class="realisation-slide__title">Rénovation Fenêtres - Maison Toulouse (Blagnac)</h3>
+                        <p class="realisation-slide__description">
+                            Remplacement de 8 fenêtres en simple vitrage par des fenêtres PVC 
+                            triple vitrage. Gain énergétique : -35% sur la facture de chauffage. 
+                            Éligible MaPrimeRénov'.
+                        </p>
+                        <ul class="realisation-slide__details">
+                            <li>✓ Fenêtres PVC triple vitrage (Uw = 0,8 W/m².K)</li>
+                            <li>✓ Réduction bruit : -40 dB</li>
+                            <li>✓ Aide MaPrimeRénov' : 720€</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- SLIDE 2 -->
+                <div class="realisation-slide">
+                    <div class="realisation-slide__content">
+                        <div class="realisation-slide__image-before" style="background-image: url('Images/avant dressing.png');">
+                            <!-- PHOTO AVANT : Chambre avec peu de rangements, désorganisée -->
+                            <div class="realisation-slide__label">Avant</div>
+                        </div>
+                        <div class="realisation-slide__image-after" style="background-image: url('Images/après dressing.png');">
+                            <!-- PHOTO APRÈS : Chambre avec dressing sur-mesure élégant et organisé -->
+                            <div class="realisation-slide__label">Après</div>
+                        </div>
+                    </div>
+                    <div class="realisation-slide__info">
+                        <h3 class="realisation-slide__title">Dressing sur Mesure - Appartement Toulouse (Centre-ville)</h3>
+                        <p class="realisation-slide__description">
+                            Création d'un dressing intégré sur-mesure dans une chambre de 12m². 
+                            Optimisation de l'espace : gain de 40% de rangements. 
+                            Finitions laquées blanc mat et poignées dorées.
+                        </p>
+                        <ul class="realisation-slide__details">
+                            <li>✓ Dressing intégré 6m linéaires</li>
+                            <li>✓ Finitions laquées haut de gamme</li>
+                            <li>✓ Délai : 3 semaines</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- SLIDE 3 -->
+                <div class="realisation-slide">
+                    <div class="realisation-slide__content">
+                        <div class="realisation-slide__image-before" style="background-image: url('Images/avant cuisine.png');">
+                            <!-- PHOTO AVANT : Cuisine ancienne, peu fonctionnelle -->
+                            <div class="realisation-slide__label">Avant</div>
+                        </div>
+                        <div class="realisation-slide__image-after" style="background-image: url('Images/après cuisine.png');">
+                            <!-- PHOTO APRÈS : Cuisine moderne sur-mesure, élégante et fonctionnelle -->
+                            <div class="realisation-slide__label">Après</div>
+                        </div>
+                    </div>
+                    <div class="realisation-slide__info">
+                        <h3 class="realisation-slide__title">Cuisine sur Mesure - Maison Toulouse (Colomiers)</h3>
+                        <p class="realisation-slide__description">
+                            Rénovation complète d'une cuisine de 15m². Aménagement sur-mesure 
+                            avec optimisations des rangements, finitions stratifiées et 
+                            intégration électroménager haut de gamme.
+                        </p>
+                        <ul class="realisation-slide__details">
+                            <li>✓ Cuisine intégrée 8m linéaires</li>
+                            <li>✓ Rangements optimisés (tiroirs, placards)</li>
+                            <li>✓ Finitions stratifiées premium</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contrôles du slider -->
+            <div class="realisations__controls">
+                <button class="slider-btn slider-btn--prev" aria-label="Projet précédent">
+                    ← Précédent
+                </button>
+                <div class="slider-dots">
+                    <button class="slider-dot active" aria-label="Projet 1"></button>
+                    <button class="slider-dot" aria-label="Projet 2"></button>
+                    <button class="slider-dot" aria-label="Projet 3"></button>
+                </div>
+                <button class="slider-btn slider-btn--next" aria-label="Projet suivant">
+                    Suivant →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION PROCESSUS
+         ============================================ -->
+    <section class="processus" id="processus">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Processus en 4 Étapes Simples</h2>
+                <p class="section-subtitle">
+                    De la première rencontre à la réception de votre chantier, 
+                    nous vous accompagnons à chaque étape avec transparence et professionnalisme.
+                </p>
+            </div>
+            
+            <div class="processus__timeline">
+                <div class="processus-step">
+                    <div class="processus-step__number">1</div>
+                    <div class="processus-step__content">
+                        <h3 class="processus-step__title">Rendez-vous Découverte</h3>
+                        <p class="processus-step__description">
+                            Visite à domicile gratuite pour comprendre vos besoins, 
+                            mesurer vos espaces et vous conseiller sur les meilleures 
+                            solutions. Durée : 1h30 environ.
+                        </p>
+                        <ul class="processus-step__details">
+                            <li>✓ Analyse de vos besoins et contraintes</li>
+                            <li>✓ Prise de cotes précises</li>
+                            <li>✓ Conseils personnalisés</li>
+                            <li>✓ Estimation budgétaire indicative</li>
+                        </ul>
+                    </div>
+                    <!-- VISUEL : Photo d'un artisan en train de prendre des mesures -->
+                </div>
+                
+                <div class="processus-step">
+                    <div class="processus-step__number">2</div>
+                    <div class="processus-step__content">
+                        <h3 class="processus-step__title">Conception 3D & Devis Détaillé</h3>
+                        <p class="processus-step__description">
+                            Création d'une visualisation 3D de votre projet et 
+                            établissement d'un devis détaillé gratuit sous 48h. 
+                            Ajustements possibles selon vos souhaits.
+                        </p>
+                        <ul class="processus-step__details">
+                            <li>✓ Visualisation 3D réaliste de votre projet</li>
+                            <li>✓ Devis détaillé avec tous les postes</li>
+                            <li>✓ Informations sur les aides de l'État</li>
+                            <li>✓ Planning prévisionnel</li>
+                        </ul>
+                    </div>
+                    <!-- VISUEL : Capture d'écran d'une visualisation 3D -->
+                </div>
+                
+                <div class="processus-step">
+                    <div class="processus-step__number">3</div>
+                    <div class="processus-step__content">
+                        <h3 class="processus-step__title">Fabrication & Pose Soignée</h3>
+                        <p class="processus-step__description">
+                            Fabrication sur-mesure dans nos ateliers français, 
+                            puis pose par nos équipes qualifiées. Chantier propre, 
+                            respect des délais et finitions irréprochables.
+                        </p>
+                        <ul class="processus-step__details">
+                            <li>✓ Fabrication sur-mesure en atelier</li>
+                            <li>✓ Pose par équipe qualifiée</li>
+                            <li>✓ Chantier propre et organisé</li>
+                            <li>✓ Respect des délais convenus</li>
+                        </ul>
+                    </div>
+                    <!-- VISUEL : Photo d'artisans en train de poser une fenêtre ou un aménagement -->
+                </div>
+                
+                <div class="processus-step">
+                    <div class="processus-step__number">4</div>
+                    <div class="processus-step__content">
+                        <h3 class="processus-step__title">Réception Chantier & Garantie</h3>
+                        <p class="processus-step__description">
+                            Réception de chantier avec vérification de tous les détails, 
+                            remise des garanties et documentation. Suivi post-chantier 
+                            pour votre satisfaction totale.
+                        </p>
+                        <ul class="processus-step__details">
+                            <li>✓ Réception détaillée avec checklist</li>
+                            <li>✓ Remise des garanties (décennale, biennale)</li>
+                            <li>✓ Documentation complète</li>
+                            <li>✓ Suivi post-chantier</li>
+                        </ul>
+                    </div>
+                    <!-- VISUEL : Photo d'une pièce finie, élégante et lumineuse -->
+                </div>
+            </div>
+            
+            <div class="processus__cta">
+                <a href="#contact" class="btn btn--primary btn--large">
+                    Démarrer mon projet
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION TÉMOIGNAGES
+         ============================================ -->
+    <section class="temoignages" id="temoignages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ce que Disent Nos Clients</h2>
+                <p class="section-subtitle">
+                    La satisfaction de nos clients est notre priorité. 
+                    Découvrez leurs retours sur la qualité de nos finitions et la propreté de nos chantiers.
+                </p>
+            </div>
+            
+            <div class="temoignages__grid">
+                <article class="temoignage-card">
+                    <div class="temoignage-card__header">
+                        <div class="temoignage-card__avatar">
+                            <!-- AVATAR : Photo de profil ou initiales -->
+                            <span>M.D.</span>
+                        </div>
+                        <div class="temoignage-card__info">
+                            <h4 class="temoignage-card__name">Marie Dupont</h4>
+                            <p class="temoignage-card__location">Toulouse - Rénovation fenêtres</p>
+                            <div class="temoignage-card__rating">
+                                <!-- Étoiles : 5/5 -->
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="temoignage-card__quote">
+                        "Travail impeccable ! Les fenêtres PVC sont magnifiques et l'isolation 
+                        est vraiment efficace. La facture de chauffage a baissé de 30%. 
+                        Le chantier était propre chaque jour, et les finitions sont soignées. 
+                        Je recommande sans hésitation."
+                    </blockquote>
+                </article>
+                
+                <article class="temoignage-card">
+                    <div class="temoignage-card__header">
+                        <div class="temoignage-card__avatar">
+                            <span>J.M.</span>
+                        </div>
+                        <div class="temoignage-card__info">
+                            <h4 class="temoignage-card__name">Jean Martin</h4>
+                            <p class="temoignage-card__location">Blagnac - Dressing sur mesure</p>
+                            <div class="temoignage-card__rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="temoignage-card__quote">
+                        "Dressing sur-mesure parfait ! L'équipe a su optimiser l'espace 
+                        de notre chambre. Les finitions sont irréprochables, et le design 
+                        correspond exactement à nos attentes. Chantier propre et délais respectés."
+                    </blockquote>
+                </article>
+                
+                <article class="temoignage-card">
+                    <div class="temoignage-card__header">
+                        <div class="temoignage-card__avatar">
+                            <span>S.L.</span>
+                        </div>
+                        <div class="temoignage-card__info">
+                            <h4 class="temoignage-card__name">Sophie Laurent</h4>
+                            <p class="temoignage-card__location">Tournefeuille - Cuisine sur mesure</p>
+                            <div class="temoignage-card__rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="temoignage-card__quote">
+                        "Cuisine magnifique ! Le rendu 3D correspondait parfaitement au résultat final. 
+                        Les rangements sont optimisés, et les finitions sont soignées. 
+                        L'équipe était professionnelle et le chantier toujours propre. 
+                        Très satisfaite de notre investissement."
+                    </blockquote>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION FAQ
+         ============================================ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Questions Fréquentes</h2>
+                <p class="section-subtitle">
+                    Retrouvez les réponses aux questions les plus courantes sur nos services, 
+                    les aides de l'État et nos délais de fabrication.
+                </p>
+            </div>
+            
+            <div class="faq__list">
+                <article class="faq-item">
+                    <button class="faq-item__question" aria-expanded="false">
+                        <h3>Quelles sont les aides de l'État pour la rénovation énergétique ?</h3>
+                        <span class="faq-item__icon">+</span>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>
+                            Grâce à notre certification RGE Qualibat, vous pouvez bénéficier de plusieurs aides :
+                        </p>
+                        <ul>
+                            <li><strong>MaPrimeRénov' :</strong> Jusqu'à 90€/m² pour le remplacement de fenêtres (selon vos revenus).</li>
+                            <li><strong>Certificats d'Économies d'Énergie (CEE) :</strong> Aide complémentaire selon les travaux.</li>
+                            <li><strong>Éco-PTZ :</strong> Prêt à taux zéro pour les travaux de rénovation énergétique.</li>
+                            <li><strong>TVA réduite :</strong> 5,5% pour les travaux de rénovation énergétique.</li>
+                        </ul>
+                        <p>
+                            Nous vous accompagnons dans vos démarches administratives pour optimiser vos aides.
+                        </p>
+                    </div>
+                </article>
+                
+                <article class="faq-item">
+                    <button class="faq-item__question" aria-expanded="false">
+                        <h3>Quels sont les délais de fabrication et de pose ?</h3>
+                        <span class="faq-item__icon">+</span>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>
+                            Les délais varient selon le type de projet :
+                        </p>
+                        <ul>
+                            <li><strong>Fenêtres PVC/ALU :</strong> 4 à 6 semaines (fabrication) + 1 à 2 jours (pose).</li>
+                            <li><strong>Dressings/Cuisines :</strong> 3 à 5 semaines (fabrication) + 3 à 5 jours (pose).</li>
+                            <li><strong>Escaliers :</strong> 6 à 8 semaines (fabrication) + 2 à 3 jours (pose).</li>
+                        </ul>
+                        <p>
+                            Un planning détaillé vous est communiqué lors de la validation du devis. 
+                            Nous respectons nos engagements de délais.
+                        </p>
+                    </div>
+                </article>
+                
+                <article class="faq-item">
+                    <button class="faq-item__question" aria-expanded="false">
+                        <h3>Quels matériaux choisir : PVC, Aluminium ou Bois ?</h3>
+                        <span class="faq-item__icon">+</span>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>
+                            Chaque matériau a ses avantages :
+                        </p>
+                        <ul>
+                            <li><strong>PVC :</strong> Excellent rapport qualité/prix, isolation optimale, entretien minimal. Idéal pour la rénovation énergétique.</li>
+                            <li><strong>Aluminium :</strong> Design moderne, finitions élégantes, résistance aux intempéries. Parfait pour les grandes baies vitrées.</li>
+                            <li><strong>Bois :</strong> Esthétique chaleureuse, matériau naturel, isolation performante. Idéal pour les maisons traditionnelles.</li>
+                        </ul>
+                        <p>
+                            Lors du rendez-vous découverte, nous vous conseillons le matériau le plus adapté à votre projet et votre budget.
+                        </p>
+                    </div>
+                </article>
+                
+                <article class="faq-item">
+                    <button class="faq-item__question" aria-expanded="false">
+                        <h3>Le devis est-il vraiment gratuit et sans engagement ?</h3>
+                        <span class="faq-item__icon">+</span>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>
+                            Oui, absolument ! Le devis est 100% gratuit et sans engagement. 
+                            Il comprend :
+                        </p>
+                        <ul>
+                            <li>✓ Visite à domicile gratuite</li>
+                            <li>✓ Prise de cotes précises</li>
+                            <li>✓ Visualisation 3D de votre projet</li>
+                            <li>✓ Devis détaillé sous 48h</li>
+                            <li>✓ Conseils personnalisés</li>
+                        </ul>
+                        <p>
+                            Vous n'avez aucune obligation d'achat. Le devis est valable 3 mois.
+                        </p>
+                    </div>
+                </article>
+                
+                <article class="faq-item">
+                    <button class="faq-item__question" aria-expanded="false">
+                        <h3>Quelle est la garantie sur vos travaux ?</h3>
+                        <span class="faq-item__icon">+</span>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>
+                            Nous garantissons tous nos travaux :
+                        </p>
+                        <ul>
+                            <li><strong>Garantie décennale :</strong> 10 ans sur les dommages affectant la solidité de l'ouvrage.</li>
+                            <li><strong>Garantie biennale :</strong> 2 ans sur les équipements et finitions.</li>
+                            <li><strong>Garantie de bon fonctionnement :</strong> 2 ans sur les éléments mobiles (fenêtres, portes).</li>
+                        </ul>
+                        <p>
+                            Toutes nos garanties sont couvertes par une assurance professionnelle.
+                        </p>
+                    </div>
+                </article>
+                
+                <article class="faq-item">
+                    <button class="faq-item__question" aria-expanded="false">
+                        <h3>Intervenez-vous dans toute la région de Toulouse ?</h3>
+                        <span class="faq-item__icon">+</span>
+                    </button>
+                    <div class="faq-item__answer">
+                        <p>
+                            Oui, nous intervenons dans un rayon de 30 km autour de Toulouse. 
+                            Notre zone d'intervention comprend :
+                        </p>
+                        <ul>
+                            <li>Toulouse et ses environs</li>
+                            <li>Blagnac, Colomiers, Tournefeuille</li>
+                            <li>Muret, Cugnaux, Plaisance-du-Touch</li>
+                            <li>L'Union, Balma, Labege</li>
+                        </ul>
+                        <p>
+                            Pour les projets plus éloignés, nous étudions chaque demande au cas par cas. 
+                            Contactez-nous pour vérifier si nous intervenons dans votre secteur.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION CONTACT / CTA FINAL
+         ============================================ -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact__grid">
+                <div class="contact__info">
+                    <h2 class="section-title">Demandez Votre Devis Gratuit</h2>
+                    <p class="section-subtitle">
+                        Remplissez le formulaire ci-contre ou contactez-nous directement. 
+                        Nous vous répondons sous 48h avec un devis détaillé et personnalisé.
+                    </p>
+                    
+                    <div class="contact__details">
+                        <div class="contact__item">
+                            <div class="contact__icon">📞</div>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <a href="tel:+33561234567">05 61 23 45 67</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__item">
+                            <div class="contact__icon">✉️</div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:contact@menuiserie-dubois.fr">contact@menuiserie-dubois.fr</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__item">
+                            <div class="contact__icon">📍</div>
+                            <div>
+                                <h4>Adresse</h4>
+                                <p>12 Avenue des Menuisiers<br>31100 Toulouse</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__item">
+                            <div class="contact__icon">🕒</div>
+                            <div>
+                                <h4>Horaires</h4>
+                                <p>Lun - Ven : 8h - 18h<br>Sam : 9h - 12h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact__form" id="contact-form">
+                    <div class="form-group">
+                        <label for="nom">Nom complet *</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="projet">Type de projet *</label>
+                        <select id="projet" name="projet" required>
+                            <option value="">Sélectionnez un projet</option>
+                            <option value="fenetres">Fenêtres PVC/ALU</option>
+                            <option value="volets">Volets & Persiennes</option>
+                            <option value="portes">Portes d'entrée</option>
+                            <option value="dressing">Dressing sur mesure</option>
+                            <option value="cuisine">Cuisine sur mesure</option>
+                            <option value="escalier">Escalier bois</option>
+                            <option value="parquet">Parquet & Revêtements</option>
+                            <option value="autre">Autre projet</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Décrivez votre projet *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Ex: Rénovation de 6 fenêtres en simple vitrage, recherche d'isolation optimale..."></textarea>
+                    </div>
+                    
+                    <div class="form-group form-group--checkbox">
+                        <label>
+                            <input type="checkbox" name="rgpd" required>
+                            <span>J'accepte que mes données soient utilisées pour me recontacter (RGPD) *</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary btn--large btn--full">
+                        Envoyer ma demande de devis
+                    </button>
+                    
+                    <p class="form-note">
+                        * Champs obligatoires. Vos données sont protégées et ne seront jamais revendues.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h3 class="footer__title">Menuiserie Artisanale Dubois</h3>
+                    <p class="footer__text">
+                        Menuiserie sur mesure spécialisée en rénovation énergétique 
+                        et aménagements intérieurs. Certification RGE Qualibat.
+                    </p>
+                    <div class="footer__social">
+                        <!-- Liens réseaux sociaux si applicable -->
+                    </div>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Nos Services</h4>
+                    <ul class="footer__links">
+                        <li><a href="#services">Fenêtres PVC & Aluminium</a></li>
+                        <li><a href="#services">Volets & Persiennes</a></li>
+                        <li><a href="#services">Portes d'entrée</a></li>
+                        <li><a href="#services">Dressings sur mesure</a></li>
+                        <li><a href="#services">Cuisines sur mesure</a></li>
+                        <li><a href="#services">Escaliers bois</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Zone d'Intervention</h4>
+                    <p class="footer__text">
+                        Nous intervenons dans un rayon de 30 km autour de Toulouse :
+                    </p>
+                    <ul class="footer__links">
+                        <li>Toulouse</li>
+                        <li>Blagnac</li>
+                        <li>Colomiers</li>
+                        <li>Tournefeuille</li>
+                        <li>Muret, Cugnaux, L'Union</li>
+                        <li>Et environs...</li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Informations Légales</h4>
+                    <ul class="footer__links">
+                        <li><a href="#mentions-legales">Mentions légales</a></li>
+                        <li><a href="#politique-confidentialite">Politique de confidentialité</a></li>
+                        <li><a href="#cookies">Gestion des cookies</a></li>
+                        <li><a href="#cgv">CGV</a></li>
+                    </ul>
+                    <p class="footer__text footer__text--small">
+                        SIRET : 123 456 789 00012<br>
+                        RCS : Toulouse B 123 456 789<br>
+                        Assurance : AXA - Police n° 987654321
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2024 Menuiserie Artisanale Dubois. Tous droits réservés. 
+                    Menuiserie sur mesure certifiée RGE Qualibat.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+
