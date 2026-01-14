@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez votre artisan électricien professionnel. Devis gratuit, prise de rendez-vous en ligne, intervention rapide. Disponible 24/7 pour les urgences.">
+    <meta name="keywords" content="contact électricien, devis électricien, rendez-vous électricien, dépannage électrique urgence">
+    <title>Contact - Devis Gratuit & Prise de Rendez-vous</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="Logo électricien" class="logo-img">
+                    <span class="logo-text">Électricien Pro</span>
+                </a>
+                <nav class="nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="a-propos.html" class="nav-link">À propos</a></li>
+                        <li><a href="avis.html" class="nav-link">Avis clients</a></li>
+                        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-cta">
+                    <a href="tel:+33123456789" class="btn btn-phone">
+                        <span class="phone-icon">📞</span>
+                        <span class="phone-text">01 23 45 67 89</span>
+                    </a>
+                    <a href="contact.html#rdv" class="btn btn-primary">Prendre RDV</a>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu mobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contactez-Nous</h1>
+            <p>Une question ? Un projet ? Nous sommes à votre écoute</p>
+        </div>
+    </section>
+
+    <!-- Contact Info & CTA -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Téléphone</h3>
+                    <p>Appelez-nous directement</p>
+                    <a href="tel:+33123456789" class="btn btn-primary">01 23 45 67 89</a>
+                    <p class="contact-note">Disponible 24/7 pour les urgences</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>Envoyez-nous un message</p>
+                    <a href="mailto:contact@electricien-pro.fr" class="btn btn-secondary">contact@electricien-pro.fr</a>
+                    <p class="contact-note">Réponse sous 24h</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Zone d'Intervention</h3>
+                    <p>Paris et Île-de-France</p>
+                    <p class="contact-zones">Paris, 92, 93, 94, 78, 91</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulaire de Contact -->
+    <section class="contact-form-section" id="devis">
+        <div class="container">
+            <div class="form-container">
+                <h2>Demander un Devis Gratuit</h2>
+                <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+                
+                <form class="contact-form" method="POST" action="#" novalidate>
+                    <div class="form-group">
+                        <label for="nom">Nom complet *</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Type de service *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Sélectionnez un service</option>
+                            <option value="installation">Installation électrique</option>
+                            <option value="depannage">Dépannage d'urgence</option>
+                            <option value="normes">Mise aux normes</option>
+                            <option value="domotique">Domotique</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet ou votre besoin..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="rgpd" required>
+                            <span>J'accepte la <a href="politique-confidentialite.html">politique de confidentialité</a> et le traitement de mes données personnelles. *</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Envoyer la demande</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prise de Rendez-vous -->
+    <section class="rdv-section" id="rdv">
+        <div class="container">
+            <div class="rdv-container">
+                <h2>Prendre un Rendez-vous en Ligne</h2>
+                <p>Choisissez une date et une heure qui vous conviennent pour une visite ou une intervention.</p>
+                
+                <form class="rdv-form" method="POST" action="#" novalidate>
+                    <div class="form-group">
+                        <label for="rdv-nom">Nom complet *</label>
+                        <input type="text" id="rdv-nom" name="rdv-nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rdv-telephone">Téléphone *</label>
+                        <input type="tel" id="rdv-telephone" name="rdv-telephone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rdv-date">Date souhaitée *</label>
+                        <input type="date" id="rdv-date" name="rdv-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rdv-heure">Heure souhaitée *</label>
+                        <select id="rdv-heure" name="rdv-heure" required>
+                            <option value="">Sélectionnez une heure</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rdv-motif">Motif de la visite *</label>
+                        <textarea id="rdv-motif" name="rdv-motif" rows="3" required placeholder="Décrivez brièvement le motif de votre rendez-vous..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="rdv-rgpd" required>
+                            <span>J'accepte la <a href="politique-confidentialite.html">politique de confidentialité</a> et le traitement de mes données personnelles. *</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Réserver le rendez-vous</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carte Google Maps -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Notre Zone d'Intervention</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937587!2d2.292292615674386!3d48.85837007928746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1234567890123!5m2!1sfr!2sfr" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Zone d'intervention - Paris et Île-de-France">
+                </iframe>
+            </div>
+            <p class="map-note">Nous intervenons dans tout Paris et l'Île-de-France : Paris, Hauts-de-Seine (92), Seine-Saint-Denis (93), Val-de-Marne (94), Yvelines (78), Essonne (91).</p>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2 class="cta-title">Besoin d'une Intervention Rapide ?</h2>
+            <p class="cta-text">Appelez-nous maintenant pour une intervention d'urgence disponible 24/7.</p>
+            <div class="cta-buttons">
+                <a href="tel:+33123456789" class="btn btn-primary btn-large">📞 01 23 45 67 89</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Électricien Pro</h3>
+                    <p>Artisan électricien professionnel spécialisé dans l'installation, le dépannage et la mise aux normes électriques.</p>
+                    <div class="footer-certifications">
+                        <span class="cert-badge">RGE</span>
+                        <span class="cert-badge">Assurance</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#installation">Installation électrique</a></li>
+                        <li><a href="services.html#depannage">Dépannage d'urgence</a></li>
+                        <li><a href="services.html#normes">Mise aux normes</a></li>
+                        <li><a href="services.html#domotique">Domotique</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <ul class="footer-links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="avis.html">Avis clients</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>📞 <a href="tel:+33123456789">01 23 45 67 89</a></li>
+                        <li>✉️ <a href="mailto:contact@electricien-pro.fr">contact@electricien-pro.fr</a></li>
+                        <li>📍 Paris et Île-de-France</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Électricien Pro. Tous droits réservés.</p>
+                <ul class="footer-legal">
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                    <li><a href="rgpd.html">RGPD</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
